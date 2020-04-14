@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>И на Марсе будут яблони цвести!</h4>
+    {% if list == 'u1' %}
+        <h2>Список профессий</h2>
+        <ul>
+        {% for item in prof_list %}
+            <li>{{item}}</li>
+        {% endfor %}
+        </ul>
+    {% elif list == 'o1' %}
+        <h2>Список профессий</h2>
+        <ol>
+        {% for item in prof_list %}
+            <li>{{item}}</li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <div style="background-color: #FF6666">Неверный параметр 'list'</div>
+        <div style="background-color: #FF6666">Допустимые значения: 'u1', 'o1'</div>
+    {% endif %}
+{% endblock %}

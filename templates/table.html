@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Оформление каюты</h2>
+    <table style="text-align: left; width: 800px;" border="1" cellpadding="0" cellspacing="1">
+    <tbody>
+    <tr>
+        <td style="vertical-align: top; text-align: center; background-color: silver;">Цвет стен</td>
+        <td style="vertical-align: top; text-align: center; background-color: silver;">Эмблема</td>
+    </tr>
+    <tr>
+        {% if sex == 'male' %}
+            <td style="vertical-align: top; height: 600px; width: 400px; background-color: blue;"></td>
+        {% elif sex == 'female' %}
+            <td style="vertical-align: top; height: 600px; width: 400px; background-color: red;"></td>
+        {% else %}
+            <td style="vertical-align: top; height: 600px; width: 400px; background-color: black;"></td>
+        {% endif %}
+
+        {% if age<21 %}
+            <td style="vertical-align: top; height: 600px; width: 400px;">
+                <img style="width: 400px; height: 600px;"
+                     alt="Здесь должен был быть маленький марсианин, но он улетел(" src="/static/img/small.png"></td>
+        {% elif age>=21 %}
+            <td style="vertical-align: top; height: 600px; width: 400px;">
+            <img style="width: 400px; height: 600px;"
+                     alt="Здесь должен был быть большой марсианин, но он улетел(" src="/static/img/big.png"></td>
+        {% else %}
+            <td style="vertical-align: top; height: 600px; width: 400px;">
+                <div>Мы не нашли подходящей эмблемы для Вас(</div></td>
+        {% endif %}
+    </tr>
+    </tbody>
+    </table>
+{% endblock %}
